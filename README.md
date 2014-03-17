@@ -5,13 +5,13 @@
 Clone this repository:
 
 ```bash
-$ git glone https://github.com/torqueforge/$NAME_OF_CLASS.git
+$ git glone https://github.com/torqueforge/careerbuilder-2014-march.git
 ```
 
 Change directories so that you are in the project:
 
 ```bash
-$ cd $NAME_OF_CLASS
+$ cd careerbuilder-2014-march
 ```
 
 Install the dependencies:
