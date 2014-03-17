@@ -24,7 +24,7 @@ class UnicornTest < Minitest::Test
   def test_it_knows_if_it_is_white
     skip
     unicorn = Unicorn.new("Elisabeth")
-    assert unicorn.white?, "Elisabeth should be white, but isn't."
+    assert unicorn.white?
   end
 
   def test_it_does_not_have_to_be_white
@@ -36,7 +36,7 @@ class UnicornTest < Minitest::Test
   def test_it_knows_if_it_is_not_white
     skip
     unicorn = Unicorn.new("Roxanne", "green")
-    refute unicorn.white?, "I guess Roxanne thinks she's white, when really she is green."
+    refute unicorn.white?
   end
 
   def test_unicorn_says_sparkly_stuff
