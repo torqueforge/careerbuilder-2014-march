@@ -1,13 +1,15 @@
 # Checkerboard
 
+**WARNING: _This is not TDD_**
+
+## Running the Tests
+
 An exercise in refactoring under green.
 
-Run the test suite with either of the following commands:
+Run the test suite with the following command:
 
 ```ruby
 $ ruby test/checkerboard_test.rb
-$ rake test
-$ rake
 ```
 
 All but the first test are marked as pending using the `skip` method.
