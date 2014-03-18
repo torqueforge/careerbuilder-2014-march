@@ -69,3 +69,7 @@ Wash. Rinse. Repeat.
 
 * [Refactoring - From Good to Great](http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great) by [Ben Orenstein](https://twitter.com/r00k) (@r00k)
 * [Source Making](http://sourcemaking.com/) - A website about code smells and the refactorings to address them
+
+## Surveys
+
+* [End of Day 2 Survey](https://docs.google.com/forms/d/16an6GK-lzmVFgJkyizwHi6HyOgVWIan5KyBIUiZBpYo/viewform)
