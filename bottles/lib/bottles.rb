@@ -1,3 +1,5 @@
+require_relative 'miracle'
+
 class Bottles
   MAX_VERSES = 99
 
@@ -12,67 +14,10 @@ class Bottles
   end
 
   def verse(verse_number)
-    "#{current_how_many(verse_number).capitalize} #{current_container(verse_number)} of beer on the wall, "+
-    "#{current_how_many(verse_number)} #{current_container(verse_number)} of beer.\n"+
-    "#{action(verse_number)}, "+
-    "#{remaining_how_many(verse_number)} #{remaining_container(verse_number)} of beer on the wall.\n"
-  end
-
-  private
-
-  def action(verse_number)
-    case verse_number
-    when 0
-      'Go to the store and buy some more'
-    else
-      "Take #{pronoun(verse_number)} down and pass it around"
-    end
-  end
-
-  def current_container(verse_number)
-    case verse_number
-    when 1
-      'bottle'
-    else
-      'bottles'
-    end
-  end
-
-  def remaining_container(verse_number)
-    case verse_number
-    when 2
-      'bottle'
-    else
-      'bottles'
-    end
-  end
-
-  def current_how_many(verse_number)
-    case verse_number
-    when 0
-      'no more'
-    else
-      verse_number.to_s
-    end
-  end
-
-  def remaining_how_many(verse_number)
-    case verse_number
-    when 0
-      MAX_VERSES
-    when 1
-      'no more'
-    else
-      verse_number - 1
-    end
-  end
-
-  def pronoun(verse_number)
-    case verse_number
-    when 1
-      'it'
-    else
-      'one'
-    end
+    bottle_number = verse_number.to_beer_bottle_number
+    "#{bottle_number} of beer on the wall, ".capitalize +
+    "#{bottle_number} of beer.\n"+
+    "#{bottle_number.action}, "+
+    "#{bottle_number.next} of beer on the wall.\n"
   end
 end
