@@ -36,14 +36,24 @@ Start on master.
 $ git checkout master
 ```
 
-If you want to save your work, create a branch from master each time
-you start working on a new exercise:
+If you want to save your work, create a branch from master. You can do this at
+any time, either when you are starting new work, or right before you want to
+commit.
 
 ```bash
 $ git checkout -b my-new-branch
 ```
 
-When you've gotten your test suite to pass, commit the changes:
+When you've gotten your test suite to pass.
+
+You have to tell git which changes you want to commit. To tell git to save
+everything:
+
+```bash
+$ git add .
+```
+
+Then commit the changes:
 
 ```bash
 $ git commit -m "Explain your change here"
@@ -55,7 +65,7 @@ When you start working on a new section, switch back to master.
 $ git checkout master
 ```
 
-Then pull the latest version from GitHub:
+Then pull the latest changes from GitHub:
 
 ```bash
 $ git pull
