@@ -1,5 +1,5 @@
 class User
-  attr_reader :contact, :password
+  attr_reader :password
 
   def initialize(password, contact)
     @password = password
@@ -13,6 +13,10 @@ class User
   def contact_name
     contact.name
   end
+
+  private
+
+  attr_reader :contact
 end
 
 class Contact < Struct.new(:email, :name)
@@ -40,9 +44,20 @@ class NullContact
   end
 end
 
-class NullUser < User
+class NullUser
   def initialize
-    @password = 'dumb_pass'
     @contact = NullContact.new
   end
+
+  def contact_email
+    contact.email
+  end
+
+  def contact_name
+    contact.name
+  end
+
+  private
+
+  attr_reader :contact
 end
