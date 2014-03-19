@@ -21,6 +21,20 @@ $ gem install bundler # if you don't have it
 $ bundle install
 ```
 
+## Keeping track in Git
+
+To see what git currently thinks is going on, say:
+
+```bash
+$ git status
+```
+
+To see which branches you have:
+
+```bash
+$ git branch
+```
+
 ## Exercises
 
 As the class progresses we will add exercises and solutions to
