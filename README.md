@@ -136,6 +136,13 @@ $ git reset --hard origin/master
 * [Refactoring - From Good to Great](http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great) by [Ben Orenstein](https://twitter.com/r00k) (@r00k)
 * [Source Making](http://sourcemaking.com/) - A website about code smells and the refactorings to address them
 
+### Git
+
+* [GitHug](https://github.com/Gazler/githug) - practical exercises to teach git
+* [Git Immersion](http://gitimmersion.com/) - a guided tour with practice exercises
+* [Try GitHub](http://try.github.io/) - interactive tutorial
+* [Think Like a Git](http://think-like-a-git.net/) - explains the philosophy that will make it easier to think about git
+
 ## Surveys
 
 * [End of Day 2 Survey](https://docs.google.com/forms/d/16an6GK-lzmVFgJkyizwHi6HyOgVWIan5KyBIUiZBpYo/viewform)
