@@ -135,6 +135,7 @@ $ git reset --hard origin/master
 
 ### Refactoring/OOP
 
+* [Growing Object-Oriented Software, Guided by Tests](http://www.amazon.com/Growing-Object-Oriented-Software-Guided-Tests/dp/0321503627/) - Steve Freeman, Nat Pryce
 * [Refactoring - From Good to Great](http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great) by [Ben Orenstein](https://twitter.com/r00k) (@r00k)
 * [Source Making](http://sourcemaking.com/) - A website about code smells and the refactorings to address them
 
