@@ -133,6 +133,8 @@ $ git reset --hard origin/master
 
 ## Resources
 
+### Refactoring/OOP
+
 * [Refactoring - From Good to Great](http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great) by [Ben Orenstein](https://twitter.com/r00k) (@r00k)
 * [Source Making](http://sourcemaking.com/) - A website about code smells and the refactorings to address them
 
@@ -142,6 +144,20 @@ $ git reset --hard origin/master
 * [Git Immersion](http://gitimmersion.com/) - a guided tour with practice exercises
 * [Try GitHub](http://try.github.io/) - interactive tutorial
 * [Think Like a Git](http://think-like-a-git.net/) - explains the philosophy that will make it easier to think about git
+
+### Ruby
+
+* [Ruby Koans](http://rubykoans.com/) - test-driven guided tour of Ruby,
+  particularly good for people who already program in other languages.
+
+For all of the following, read the README where there is one. If something is
+confusing, submit a GitHub issue in the relevant repository. The instructions
+can probably be improved.
+
+* [Fundamental Ruby](https://github.com/JumpstartLab/ruby-exercises) - exercises that use unit tests and error messages to teach the core and standard libraries
+* [Enumerable Exercises](https://github.com/JumpstartLab/enums-exercises) - exercises for practicing using the (very rich!) enumerable methods in Ruby.
+* [Unicorn, revisited](http://tutorials.jumpstartlab.com/topics/testing/intro-to-tdd.html) - intro to Ruby using TDD
+
 
 ## Surveys
 
