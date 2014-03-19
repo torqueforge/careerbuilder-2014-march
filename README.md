@@ -75,6 +75,48 @@ Then create a new branch.
 
 Wash. Rinse. Repeat.
 
+### Throw it all away?
+
+You can throw all your code away like this:
+
+First, make sure that git knows all about the files you have:
+
+```bash
+$ git add .
+```
+
+Then throw the changes away:
+
+```bash
+$ git reset --hard
+```
+
+### Did your master diverge?
+
+Go ahead and create a new branch with all your changes:
+
+```bash
+$ git checkout -b my-backup-branch
+```
+
+Then go back to master:
+
+```bash
+$ git checkout master
+```
+
+Make sure you have the most recent changes from GitHub:
+
+```bash
+$ git fetch origin
+```
+
+Then tell git to create a new copy of master, throwing away the old one:
+
+```bash
+$ git reset --hard origin/master
+```
+
 ## Resources
 
 * [Refactoring - From Good to Great](http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great) by [Ben Orenstein](https://twitter.com/r00k) (@r00k)
