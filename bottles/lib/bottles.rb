@@ -28,15 +28,7 @@ class Verse
   end
 
   def to_s
-    bottle_number =
-      case number
-      when 0
-        BeerSongBottleNumber0.new(number)
-      when 1
-        BeerSongBottleNumber1.new(number)
-      else
-        BeerSongBottleNumber.new(number)
-      end
+    bottle_number = number.to_bottle_number
 
     "#{bottle_number.how_many.capitalize} #{bottle_number.container} of beer on the wall, "+
     "#{bottle_number.how_many} #{bottle_number.container} of beer.\n"+
@@ -44,6 +36,19 @@ class Verse
     "#{bottle_number.next.how_many} #{bottle_number.next.container} of beer on the wall.\n"
   end
 
+end
+
+class Fixnum
+  def to_bottle_number
+    case self
+    when 0
+      BeerSongBottleNumber0.new(self)
+    when 1
+      BeerSongBottleNumber1.new(self)
+    else
+      BeerSongBottleNumber.new(self)
+    end
+  end
 end
 
 
@@ -71,19 +76,12 @@ class BeerSongBottleNumber
     'one'
   end
 
-  def next
-    pred = number.pred
+  def pred
+    number.pred
+  end
 
-    case pred
-    when -1
-      BeerSongBottleNumber.new(99)
-    when 0
-      BeerSongBottleNumber0.new(pred)
-    when 1
-      BeerSongBottleNumber1.new(pred)
-    else
-      BeerSongBottleNumber.new(pred)
-    end
+  def next
+    pred.to_bottle_number
   end
 
 end
@@ -97,6 +95,10 @@ class BeerSongBottleNumber0 < BeerSongBottleNumber
   def how_many
     'no more'
   end
+
+  def pred
+    99
+  end
 end
 
 class BeerSongBottleNumber1 < BeerSongBottleNumber
@@ -109,5 +111,3 @@ class BeerSongBottleNumber1 < BeerSongBottleNumber
   end
 
 end
-
-
