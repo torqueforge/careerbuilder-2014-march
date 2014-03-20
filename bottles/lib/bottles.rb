@@ -12,22 +12,6 @@ class Bottles
   end
 
   def verse(number)
-    Verse.new(number).to_s
-  end
-
-end
-
-
-
-class Verse
-
-  attr_reader :number
-
-  def initialize(number)
-    @number   = number
-  end
-
-  def to_s
     bottle_number = number.to_bottle_number
 
     "#{bottle_number.how_many.capitalize} #{bottle_number.container} of beer on the wall, "+
@@ -37,6 +21,7 @@ class Verse
   end
 
 end
+
 
 class Fixnum
   def to_bottle_number
