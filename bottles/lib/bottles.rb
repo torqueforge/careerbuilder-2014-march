@@ -11,68 +11,121 @@ class Bottles
     }.join
   end
 
-  def verse(verse_number)
-    "#{current_how_many(verse_number).capitalize} #{current_container(verse_number)} of beer on the wall, "+
-    "#{current_how_many(verse_number)} #{current_container(verse_number)} of beer.\n"+
-    "#{action(verse_number)}, "+
-    "#{remaining_how_many(verse_number)} #{remaining_container(verse_number)} of beer on the wall.\n"
+  def verse(number)
+    Verse.new(number).to_s
   end
 
-  private
+end
 
-  def action(verse_number)
-    case verse_number
-    when 0
-      'Go to the store and buy some more'
-    else
-      "Take #{pronoun(verse_number)} down and pass it around"
-    end
+
+
+require 'forwardable'
+
+class Verse
+
+  extend Forwardable
+  delegate [:current_container, :current_how_many, :action, :remaining_how_many, :remaining_container] => :strategy
+
+  attr_reader :strategy
+
+  def initialize(number)
+    @strategy = SuitableVerseStrategy.for(number)
   end
 
-  def current_container(verse_number)
-    case verse_number
-    when 1
-      'bottle'
-    else
-      'bottles'
-    end
+  def to_s
+    "#{current_how_many.capitalize} #{current_container} of beer on the wall, "+
+    "#{current_how_many} #{current_container} of beer.\n"+
+    "#{action}, "+
+    "#{remaining_how_many} #{remaining_container} of beer on the wall.\n"
   end
 
-  def remaining_container(verse_number)
-    case verse_number
-    when 2
-      'bottle'
-    else
-      'bottles'
-    end
+end
+
+
+
+class VerseStrategy
+  MAX_VERSES = 99
+
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
   end
 
-  def current_how_many(verse_number)
-    case verse_number
-    when 0
-      'no more'
-    else
-      verse_number.to_s
-    end
+  def action
+    "Take #{pronoun} down and pass it around"
   end
 
-  def remaining_how_many(verse_number)
-    case verse_number
-    when 0
-      MAX_VERSES
-    when 1
-      'no more'
-    else
-      verse_number - 1
-    end
+  def current_container
+    'bottles'
   end
 
-  def pronoun(verse_number)
-    case verse_number
-    when 1
-      'it'
+  def remaining_container
+    'bottles'
+  end
+
+  def current_how_many
+    number.to_s
+  end
+
+  def remaining_how_many
+    number - 1
+  end
+
+  def pronoun
+    'one'
+  end
+
+end
+
+class VerseStrategy0 < VerseStrategy
+
+  def action
+    'Go to the store and buy some more'
+  end
+
+  def current_how_many
+    'no more'
+  end
+
+  def remaining_how_many
+    MAX_VERSES
+  end
+
+end
+
+class VerseStrategy1 < VerseStrategy
+
+  def current_container
+    'bottle'
+  end
+
+  def remaining_how_many
+    'no more'
+  end
+
+  def pronoun
+    'it'
+  end
+
+end
+
+class VerseStrategy2 < VerseStrategy
+
+  def remaining_container
+    'bottle'
+  end
+end
+
+
+
+class SuitableVerseStrategy
+
+  def self.for(number)
+    if Object.const_defined?("VerseStrategy#{number}")
+      Object.const_get("VerseStrategy#{number}")
     else
-      'one'
-    end
+      VerseStrategy
+    end.new(number)
   end
 end
