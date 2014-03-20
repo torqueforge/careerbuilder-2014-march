@@ -163,3 +163,4 @@ can probably be improved.
 ## Surveys
 
 * [End of Day 2 Survey](https://docs.google.com/forms/d/16an6GK-lzmVFgJkyizwHi6HyOgVWIan5KyBIUiZBpYo/viewform)
+* [End of Day 3 Survey](https://docs.google.com/forms/d/1JUYCk9vIY-5damoZUS6GvrHeGuCa7Q_GcK_hnMp43tk/viewform)
